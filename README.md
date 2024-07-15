@@ -1,5 +1,11 @@
 # Word search helper app
 
+## Motivation
+
+I want to create an app that helps boost the efficiency of learning foreign words.
+For now, I will focus on making the app specific for somebody learning German, but in the 
+future I will add an abstraction layer so that the app can be used for learning any language. 
+
 ## Context
 
 I have been learning German for a few years now and have to look up words regularly.
@@ -36,7 +42,7 @@ One can imagine that I spend long time to prepare one card which slows down my l
 
 When I listen to a podcast, watch a video, a movie, or read a book and notice a new word, I need to figure out quickly whether
 it's worth it for me to memorize this word and write a card for it. For example, I don't bother memorizing a word if it is:
-- old/archaic
+- old/archaic,
 - used in an extremely specific circumstance that rarely occurs,
 - way too specific to a certain region outside which nobody uses this word,
 - not frequently used in a modern day speech.
@@ -46,3 +52,8 @@ website showing the frequency of the word use with time:
 ![dwds word frequency graph](docs/dwds-word-frequency.png)
 
 
+## Solution
+
+The best solution to solve these problems is to create a website displaying sample sentences
+from all of my favorite resources in a user-friendly manner. Additionally, there should be 
+a dedicated section where I can see the frequency of the word's use.
