@@ -4,7 +4,7 @@
 
 I want to create an app that helps boost the efficiency of learning foreign words.
 For now, I will focus on making the app specific for somebody learning German, but in the 
-future I will add an abstraction layer so that the app can be used for learning any language. 
+future I will add settings parameters so that anybody can customize the app for any language. 
 
 ## Context
 
