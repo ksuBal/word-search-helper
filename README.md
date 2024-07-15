@@ -57,3 +57,6 @@ website showing the frequency of the word use with time:
 The best solution to solve these problems is to create a website displaying sample sentences
 from all of my favorite resources in a user-friendly manner. Additionally, there should be 
 a dedicated section where I can see the frequency of the word's use.
+
+Initial Figma sketch:
+![figma-initial-sketch](docs/figma-initial-sketch.png)
