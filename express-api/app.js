@@ -20,7 +20,6 @@ app.get('/search/:word', async (req, res) => {
 			throw new Error(`Data retrieval failed.`);
 		}
 	} catch (error) {
-		console.log('oh noooo')
 		console.error(error.message);
 		res.status(404).send('Word not found');
 	}
