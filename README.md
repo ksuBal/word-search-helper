@@ -59,4 +59,5 @@ from all of my favorite resources in a user-friendly manner. Additionally, there
 a dedicated section where I can see the frequency of the word's use.
 
 Initial Figma sketch:
+
 ![figma-initial-sketch](docs/figma-initial-sketch.png)
