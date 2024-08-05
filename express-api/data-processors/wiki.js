@@ -1,5 +1,9 @@
 const cheerio = require('cheerio');
 
+/** TODO: corner case scenario: a noun can be masculine with its meanings but also feminine, depending on the context
+ * TODO: corner case scenario: if a verb is entered in a tense other than present, get its infinitive and call wiki endpoint again
+ * TODO: add translations as well
+ * */
 function retrieveData(htmlData) {
 	const $ = cheerio.load(htmlData);
 	const title = $('h2').text().split(' ')[0];
