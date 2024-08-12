@@ -15,7 +15,7 @@ https://webscraping.ai/faq/cheerio/what-are-the-differences-between-cheerio-and-
 
 ## DWDS API
 
-### FrequencyData frequency
+### Frequency data
 
 After investigating the API for word frequency (https://www.dwds.de/d/api#count-export,
 https://www.dwds.de/d/worthaeufigkeit),
@@ -38,3 +38,21 @@ of the German Language (DWDS) at the Berlin-Brandenburg Academy of Science (BBAW
 "
 Source: http://www.dlexdb.de/documentation/corpora/
 
+###  Progression curve data
+
+Initially I wanted to include this graph into my app to understand how the usage tendency
+has been going from the past up until now (source: DWDS).
+
+![img.png](dwds-progression-curve.png)
+
+However, DWDS API doesn't provide me the data (values for x and y axis) so I can plot the graph.
+I did find links on DWDS website for the raw data that they use on their end.
+That raw data is collected from various corpora (23 corpora), meaning that if I want to plot the same graph as 
+DWDS, I would have to make separate requests to these corpora APIs. Once the data is collected,
+I would have to process the data and follow the formulas for the window, smoothing coefficient, confidence, etc.
+provided on DWDS website (https://www.dwds.de/d/plot#erweitert) to make the graph look the same.
+
+I don't find this to be a nice solution, as it would make the app maintenance more complex,
+given that I have to interrogate so many sources.
+
+Therefore, I won't plot the graph on the app and will rely on the frequency data provided from dlexDB.
