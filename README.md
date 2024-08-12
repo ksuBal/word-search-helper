@@ -1,4 +1,4 @@
-# Word search helper app
+# FrequencyData search helper app
 
 ## Motivation
 

@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
  * TODO: corner case scenario: if a verb is entered in a tense other than present, get its infinitive and call wiki endpoint again
  * TODO: add translations as well
  * */
-function retrieveData(htmlData) {
+function processFetchedData(htmlData) {
 	const $ = cheerio.load(htmlData);
 	const title = $('h2').text().split(' ')[0];
 	const meanings = $('section [data-mw-section-id=2] p[title="Sinn und Bezeichnetes (Semantik)"] + dl').text();
@@ -13,4 +13,4 @@ function retrieveData(htmlData) {
 	return { title: title, meanings: meanings, examples: examples };
 }
 
-module.exports = { retrieveData };
+module.exports = { processFetchedData };
