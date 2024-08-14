@@ -1,9 +1,14 @@
 const express = require('express');
 const app = express();
+const cors = require("cors");
 const wikiController = require("./controllers/wiki");
 const dwdsController = require("./controllers/dwds");
 
-const port = 5000;
+const corsOptions = {
+	origin: 'http://localhost:8081'
+}
+
+app.use(cors(corsOptions));
 
 app.get('/search/dwds/:word', async (req, res) => {
 	const word = req.params.word;
@@ -25,6 +30,6 @@ app.get('/search/wiki/:word', async (req, res) => {
 	}
 });
 
-app.listen(port, () => {
-	console.log(`Server is running on port ${port}`);
+app.listen(5000, () => {
+	console.log(`Server is running on port 5000`);
 });
