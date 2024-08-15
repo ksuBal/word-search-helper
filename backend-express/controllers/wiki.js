@@ -1,9 +1,11 @@
 const wikiProcessor = require("../data-processors/wiki");
+const {fetchLemma} = require("./dlexdb");
 const baseUrl = 'https://de.wiktionary.org/api/rest_v1/page/html';
 
 async function fetchData(word) {
 	try {
-		const response = await fetch(`${baseUrl}/${word}`);
+		const lemma = await fetchLemma(word);
+		const response = await fetch(`${baseUrl}/${lemma}`);
 		if (!response.ok) {
 			throw new Error(`Fetching Wiki data failed. Response status: ${response.status}`);
 		}
