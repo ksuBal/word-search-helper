@@ -1,5 +1,5 @@
 const {fetchLemma} = require("./dlexdb");
-const dwdsUrl = 'https://www.dwds.de/api'
+const baseUrl = 'https://www.dwds.de/api'
 
 async function fetchData(word) {
 	try {
@@ -13,13 +13,15 @@ async function fetchData(word) {
 
 async function fetchFrequency(lemma) {
 	try {
-		const frequencyResponse = await fetch(`${dwdsUrl}/frequency/?q=${lemma}`, {
+		const frequencyResponse = await fetch(`${baseUrl}/frequency/?q=${lemma}`, {
 			headers: { "Accept": "application/json" }
 		});
 		if (!frequencyResponse.ok) {
 			throw new Error(`Fetching frequency data failed. Response status: ${frequencyResponse.status}`);
 		}
-		return await frequencyResponse.json();
+		const frequencyData = await frequencyResponse.json();
+		frequencyData.lemma = lemma;
+		return frequencyData;
 	} catch (error) {
 		console.error(error.message);
 		throw new Error(error);

@@ -1,9 +1,9 @@
-const dlexdbUrl = 'http://dlexdb.de/sr/dlexdb/kern';
+const baseUrl = 'http://dlexdb.de/sr/dlexdb/kern';
 
 // TODO: Make sure to cache this value to avoid calling the external API multiple times
 async function fetchLemma(word) {
 	try {
-		const lemmaResponse = await fetch(`${dlexdbUrl}/typposlem/filter?select=lem_cit&typ_cit__eq=${word}`, {
+		const lemmaResponse = await fetch(`${baseUrl}/typposlem/filter?select=lem_cit&typ_cit__eq=${word}`, {
 			headers: { "Accept": "application/json" }
 		});
 		if (!lemmaResponse.ok) {
