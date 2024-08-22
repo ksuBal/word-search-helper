@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Text, useColorScheme, View } from "react-native";
 import React from "react";
 
 export default function IntensityBar({frequency}) {
@@ -11,15 +11,15 @@ export default function IntensityBar({frequency}) {
 						key={index}
 						style={[
 							styles.rectangle,
-							{backgroundColor: index <= frequency ? "#697565" : "#ECDFCC"}
+							{backgroundColor: index <= frequency ? "#2E236C" : "#C8ACD6"}
 						]}
 					/>
 				))
 				}
 			</View>
 			<View style={styles.textContainer}>
-				<View style={{flex: 1}}><Text style={{textAlign: "left"}}>selten</Text></View>
-				<View style={{flex: 1}}><Text style={{textAlign: "right"}}>häufig</Text></View>
+				<View style={{flex: 1}}><Text style={[styles.baseText, { textAlign: "left" }]}>selten</Text></View>
+				<View style={{flex: 1}}><Text style={[styles.baseText, { textAlign: "right" }]}>häufig</Text></View>
 			</View>
 		</>
 	)
@@ -40,5 +40,9 @@ const styles = {
 	textContainer: {
 		flex: 1,
 		flexDirection: "row",
-	}
+	},
+	baseText: {
+		fontSize: 14,
+		color: "#1E201E",
+	},
 }

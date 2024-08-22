@@ -10,7 +10,7 @@ function processFetchedData(htmlData) {
 	const meanings = $('section [data-mw-section-id=2] p[title="Sinn und Bezeichnetes (Semantik)"] + dl').text();
 	const examples= $('section [data-mw-section-id=2] p[title="Verwendungsbeispielsätze"] + dl').text();
 
-	return { title: title, meanings: meanings, examples: examples };
+	return { lemma: title, meanings: meanings, examples: examples };
 }
 
 module.exports = { processFetchedData };

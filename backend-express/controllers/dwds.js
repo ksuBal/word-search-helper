@@ -1,9 +1,7 @@
-const {fetchLemma} = require("./dlexdb");
 const baseUrl = 'https://www.dwds.de/api'
 
-async function fetchData(word) {
+async function fetchData(lemma) {
 	try {
-		const lemma = await fetchLemma(word);
 		return await fetchFrequency(lemma);
 	} catch (error) {
 		console.error(error.message);
